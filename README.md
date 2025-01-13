@@ -7,12 +7,18 @@ How to run this project:
 
 ### Access and Authentication
 After starting the application, navigate to http://localhost:8080/swagger-ui.html
+
 You'll need to authenticate to use the API. 
+
 You have two options:
+
 1. Use existing account:
+   
 Email: user@user.com
+
 Password: 12345678
-2. Create new account using /register endpoint
+
+3. Create new account using /register endpoint
 
 ### Step by step guide:
 1. Authentication
