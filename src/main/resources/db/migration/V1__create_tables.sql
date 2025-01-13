@@ -53,10 +53,10 @@ VALUES ('hash1', '$2a$10$DhjmzBh5ubu8mrkF8sAZ1eocxwB58zZLhGCLbJUA6r0FMSJGtnl1e',
         'user@user.com', 'Sebastian', 'Kantor', CURRENT_TIMESTAMP);
 
 INSERT INTO products (product_hash, name, normal_price, special_price_quantity, special_price)
-VALUES ('hash123', 'Product A', 40.00, 3, 30.00),
-       ('hash456', 'Product B', 10.00, 2, 7.50),
-       ('hash789', 'Product C', 30.00, 4, 20.00),
-       ('hash012', 'Product D', 25.00, 2, 23.50);
+VALUES ('hash123', 'A', 40.00, 3, 30.00),
+       ('hash456', 'B', 10.00, 2, 7.50),
+       ('hash789', 'C', 30.00, 4, 20.00),
+       ('hash012', 'D', 25.00, 2, 23.50);
 
 CREATE TABLE combined_discounts
 (
