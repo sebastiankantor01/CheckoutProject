@@ -12,7 +12,6 @@ import projekt.checkoutproject.api.dto.auth.RegisterRequest;
 import projekt.checkoutproject.infrastructure.configuration.JwtService;
 import projekt.checkoutproject.infrastructure.database.entity.UserEntity;
 import projekt.checkoutproject.infrastructure.database.repository.UserRepository;
-import projekt.checkoutproject.infrastructure.exceptions.UnknownUserException;
 import projekt.checkoutproject.infrastructure.exceptions.UserAlreadyExistsException;
 import projekt.checkoutproject.infrastructure.exceptions.UserNotFoundException;
 

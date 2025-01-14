@@ -27,24 +27,6 @@ public class CheckoutService {
     private final UserRepository userRepository;
     private final CombinedDiscountRepository combinedDiscountRepository;
 
-    public void scanItem(String email, String itemName) {
-        UserEntity user = userRepository.findByEmail(email)
-                .orElseThrow(() -> new UserNotFoundException(email));
-
-        ProductEntity product = productRepository.findByName(itemName)
-                .orElseThrow(() -> new ProductNotFoundException(itemName));
-
-        CartEntity cart = checkCartAvailability(user);
-
-        Optional<CartItemEntity> existingCartItem = cart.getItems().stream()
-                .filter(item -> item.getProduct().getName().equals(product.getName()))
-                .findFirst();
-
-        updateItemQuantity(existingCartItem, cart, product);
-
-        cartRepository.save(cart);
-    }
-
     private static void updateItemQuantity(Optional<CartItemEntity> existingCartItem, CartEntity cart, ProductEntity product) {
         if (existingCartItem.isPresent()) {
             CartItemEntity cartProduct = existingCartItem.get();
@@ -63,6 +45,24 @@ public class CheckoutService {
         }
 
         return cart;
+    }
+
+    public void scanItem(String email, String itemName) {
+        UserEntity user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new UserNotFoundException(email));
+
+        ProductEntity product = productRepository.findByName(itemName)
+                .orElseThrow(() -> new ProductNotFoundException(itemName));
+
+        CartEntity cart = checkCartAvailability(user);
+
+        Optional<CartItemEntity> existingCartItem = cart.getItems().stream()
+                .filter(item -> item.getProduct().getName().equals(product.getName()))
+                .findFirst();
+
+        updateItemQuantity(existingCartItem, cart, product);
+
+        cartRepository.save(cart);
     }
 
     public CartResponse getCartDetails(String email) {
