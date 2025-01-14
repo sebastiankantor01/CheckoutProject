@@ -14,11 +14,11 @@ After starting the application, navigate to http://localhost:8080/swagger-ui/ind
 
 You'll need to authenticate to use the API. You have two options:
 
-### Use existing account:
+#### 1. Use existing account:
 - Email: user@user.com
 - Password: 12345678
 
-### Create a new account using `/register` endpoint
+#### 2. Create a new account using `/register` endpoint
 
 ## Step by Step Guide
 
